@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import style from './NavBar.module.css';
+import SearchBar from '../SearchBar/SearchBar';
+
 
 const NavBar = (props) => {
     // let userStatus = props.user ?
@@ -23,6 +25,9 @@ const NavBar = (props) => {
     return (
       <div className={style.NavBar}>
           <h1>STEMpedia</h1>
+          <div className={style.SearchBar}>
+              < SearchBar />
+          </div>
       </div>
     );
   };

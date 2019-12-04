@@ -1,0 +1,6 @@
+.SideBar {
+    border: 2px solid darkgrey;
+    background-color: tan;
+    max-width: 200px;
+    height: 100%;
+}

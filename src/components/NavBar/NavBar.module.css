@@ -1,12 +1,12 @@
 .NavBar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     font-size: 16px;
     border-top: 2px solid darkgrey;
     border-bottom: 1px solid grey;
     background-color: whitesmoke;
-    color: rgb(112, 56, 126);
+    color: rgb(56, 63, 126);
 }
 
 h1 {

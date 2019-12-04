@@ -1,9 +1,10 @@
 .App {
   text-align: center;
+  height: 100em;
+  background-color:forestgreen;
 }
 
 * {
-  background-color: lightblue;
 }
 
 /* .App-header {
