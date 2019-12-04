@@ -32,13 +32,15 @@ const NavBar = (props) => {
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item href="/newpost">New Post</Dropdown.Item>
+            <Dropdown.Item href="https://www.google.com">All Posts</Dropdown.Item>
             <Dropdown.Item href="https://www.google.com">My Posts</Dropdown.Item>
-            <Dropdown.Item href="https://www.google.com">My Comments</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        <h1>STEMpedia</h1>
+        <a href="/"><h1>STEMpedia</h1></a>
         <div className={style.SearchBar}>
-            < SearchBar />
+            < SearchBar 
+              {...props}
+            />
         </div>
       </div>
     );

@@ -3,7 +3,9 @@ import style from './PostForm.module.css';
 
 const PostForm = (props) => {
     return(
+
         <div className={style.PostForm}>
+            <h1>What's on your mind?</h1>
             <form>
                 <label className={style.Title}>Title: 
                     <input type="text" name="title" />
@@ -17,8 +19,6 @@ const PostForm = (props) => {
                 <label className={style.Title}>Date: 
                     <input type="date" name="tags" value="today"/>
                 </label>
-
-
                 <input type="submit" value="Submit" />
             </form>
         </div>

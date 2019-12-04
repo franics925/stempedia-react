@@ -8,7 +8,7 @@ const SearchBar = (props) => {
         <div className={style.SearchBar}>
             <input 
                 placeholder="Search..."
-                // onChange={event => props.handleOnChange(event)}
+                onChange={event => props.handleOnChange(event)}
             />
         </div>
     );

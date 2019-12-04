@@ -1,3 +1,5 @@
 .PostForm {
+    display: flex;
+    
     background-color: white;
 }

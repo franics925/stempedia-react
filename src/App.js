@@ -53,32 +53,40 @@ const posts = [
 class App extends Component {
   state = {
     user: user,
+    query: '',
     searchResults: [],
     resultsLoaded: false,
-    query: '',
-
   }
+
+  handleOnChange = (event) => {
+    this.setState({
+        query: (event.target.value)
+    })
+    console.log(this.state.query)
+  };
+
+  
   render() {
-    
     return (
       <div>
         <div className='App'>
           <div className="NavBar">
             < NavBar 
-              user={user}
+              {...this.state}
+              handleOnChange={this.handleOnChange}
             />
           </div>
           <div className='Main'>
             <div>
               < SideBar 
-                user={user}
-                posts={posts}
+                {...this.state}
               />
             </div>
 
             < Switch >
               <Route exact path='/' render={() =>
                 < Home
+                {...this.state}
                 />
               }/>
 
@@ -92,8 +100,9 @@ class App extends Component {
                 />
               }/>
 
-              <Route exact path='/searchresults' render={() =>
+              <Route exact path='/search' render={() =>
                 < SearchResults
+                  {...this.state}
                 />
               }/>
             </Switch>

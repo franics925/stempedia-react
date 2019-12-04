@@ -6,10 +6,9 @@ import User from '../User/User';
 const SideBar = (props) => {
 return (
     <div className={style.SideBar}>
-        <h1>SideBar</h1>
+        <a href="/newpost" className={style.NewPostLink}>New Post</a>
         < User
-          user={props.user}
-          posts={props.posts}
+          {...props}
 
         />
     </div>
