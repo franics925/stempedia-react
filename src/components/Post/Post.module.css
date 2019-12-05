@@ -1,3 +1,39 @@
+.Post Header {
+    display: flex;
+    padding: 1em;
+}
+
 .Header {
-    display: flex
+    display: flex;
+    justify-content: space-between;
+    border-bottom: .2px solid purple;
+}
+
+.HeaderLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 2em;
+}
+
+.HeaderRight {
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+    padding: 1em;
+}
+
+.Header button {
+    color: red;
+    height: 35px;
+}
+
+.Body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 30%;
+    margin: 2em;
+
 }

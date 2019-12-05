@@ -6,7 +6,7 @@ const SearchResults = (props) => {
     return(
         <div className={style.SearchResults}>
             <div className={style.SearchHeader}>
-            { props.searchLoading ? 
+            { props.query ? 
                 <div className={style.ResultsPrompt}>
                 <h3>Showing results for: <h4>{props.query}</h4></h3>
             </div> : ''
@@ -15,12 +15,17 @@ const SearchResults = (props) => {
 
             {props.posts.sort().map((result, idx) =>
                 <div className={style.Result} key={idx}>
-                    <p>Up Votes: {result.upVotes}</p>
-                    <p>Posted By: {result.userName}</p>
-                    <a href='/post'>
-                        <h3>{result.title}</h3>
-                    </a>
-                    <p>Description: {result.description}</p>
+                    <div className={style.ResultBody}>
+                        <a href='/post'>
+                            <h3>{result.title}</h3>
+                        </a>
+                        <p>{result.description}</p>
+                        <p>By: {result.userName}</p>
+                    </div>
+                    <div className={style.details}>
+                        <p>Views: {result.views}</p>
+                        <p>Comments: 4</p>
+                    </div>
                 </div>
             )}
         </div>

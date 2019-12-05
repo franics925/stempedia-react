@@ -4,8 +4,15 @@
 
 .Comment {
     display: flex;
+    justify-content: space-between;
+    margin: 2em;
 }
 
 .Votes {
     display: flex;
+}
+
+.Comments h3 {
+    background-color: rgb(107, 107, 98);
+    color: white
 }

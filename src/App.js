@@ -30,15 +30,15 @@ const user = [{
 
 const posts = [
   {
-    title: 'Pythagoreans Thereom',
+    title: 'Pythagoreans Theorem',
     id: 0,
     date: 'Dec 4, 2019',
-    description: 'How do you use Pythagorean Theorem?',
-    body: "To use pythagoreans theoreom, one must understand that it can only be used for right triangles, triangles containing a 90 degree angle. The formula is a^2+b^2=c^2 where c is the hypotenuse  (the side opposite the 90 degree angle).",
+    description: 'A hyberbrief explanation of The Pythagorean Theorem',
+    body: "To use pythagoreans theorem, one must understand that it can only be used for right triangles, triangles containing a 90 degree angle. The formula is a^2+b^2=c^2 where c is the hypotenuse  (the side opposite the 90 degree angle).",
     user_id: 0,
     userName: 'Greg',
     tags: ['math', 'geometry', 'pythagorean', 'triangles'],
-    upVotes: 3,
+    views: 13,
   },
   {
     title: 'How to create a form in HTML',
@@ -49,7 +49,7 @@ const posts = [
     user_id: 1,
     userName: 'Mike',
     tags: ['HTML'],
-    upVotes: 6,
+    views: 6,
   },
 ]
       
@@ -115,36 +115,35 @@ class App extends Component {
                 {...this.state}
               />
             </div>
-
-            < Switch >
-              <Route exact path='/' render={() =>
-                < Home
-                {...this.state}
-                />
-              }/>
-
-              <Route exact path='/post' render={() =>
-                < Post
+              < Switch >
+                <Route exact path='/' render={() =>
+                  < SearchResults
                   {...this.state}
-                />
-            }/>
+                  />
+                }/>
 
-              <Route exact path='/newuser' render={() =>
-                < UserForm
-                />
+                <Route exact path='/post' render={() =>
+                  < Post
+                    {...this.state}
+                  />
               }/>
 
-              <Route exact path='/newpost' render={() =>
-                < PostForm
-                />
-              }/>
+                <Route exact path='/newuser' render={() =>
+                  < UserForm
+                  />
+                }/>
 
-              <Route exact path='/search' render={() =>
-                < SearchResults
-                  {...this.state}
-                />
-              }/>
-            </Switch>
+                <Route exact path='/newpost' render={() =>
+                  < PostForm
+                  />
+                }/>
+
+                <Route exact path='/search' render={() =>
+                  < SearchResults
+                    {...this.state}
+                  />
+                }/>
+              </Switch>
           </div>
         </div>
       </div>

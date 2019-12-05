@@ -7,19 +7,19 @@ const Post = (props) => (
 
         <div className={style.Post}>
             <div className={style.Header}>
-                <button className={style.upVoteBtn}>Up Votes: {props.posts[0].upVotes}</button>
-                <button className={style.addToFavsBtn}>Add To Favorites</button>
-                <h1>{props.posts[0].title}</h1>
+                <div className={style.HeaderLeft}>
+                    <h1>{props.posts[0].title}</h1>
+                    <p>{props.posts[0].date}, By: {props.posts[0].userName}</p>
+                </div>
+                <div className={style.HeaderRight}>
+                    <p className={style.upVoteBtn}>Views: {props.posts[0].views}</p>
+                    <button className={style.addToFavsBtn}>Add To Favorites</button>
+                </div>
             </div>
-
-            <div className={style.Info}>
-                <h6>{props.posts[0].userName}</h6>
-                <h6>{props.posts[0].date}</h6>
-
+            <div className={style.Body}>
+                <h5>{props.posts[0].description}</h5>
+                <p>{props.posts[0].body}</p>
             </div>
-
-            <h3>{props.posts[0].description}</h3>
-            <p>{props.posts[0].body}</p>
 
             <div className={style.Comments}>
                 < Comments 
