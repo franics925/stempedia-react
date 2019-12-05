@@ -1,0 +1,4 @@
+.CommentForm, form {
+    display: flex;
+    border: .5px solid grey;
+}

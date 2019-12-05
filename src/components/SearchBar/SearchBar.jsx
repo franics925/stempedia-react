@@ -10,6 +10,13 @@ const SearchBar = (props) => {
                 placeholder="Search..."
                 onChange={event => props.handleOnChange(event)}
             />
+            <button
+                className="SearchButton"
+                // handleOnClick={event => props.handleOnClick(event)}
+                handleonclick={props.handleonclick}
+            >
+                <p>Search</p>
+            </button>
         </div>
     );
 };

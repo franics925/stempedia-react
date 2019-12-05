@@ -2,3 +2,11 @@
     background-color: white;
     width: 100%;
 }
+.SearchHeader {
+    border-bottom: 2px solid black;
+}
+
+.Result {
+    display: flex;
+    border-bottom: 2px solid blue;
+}

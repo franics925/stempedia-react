@@ -8,62 +8,93 @@ import SearchResults from '../src/components/SearchResults/SearchResults';
 import Home from '../src/components/Home/Home';
 import UserForm from '../src/components/User/UserForm/UserForm';
 import PostForm from '../src/components/PostForm/PostForm';
+import Post from '../src/components/Post/Post';
 
 import { Route, Switch,} from 'react-router-dom';
 // import { isPseudoElement } from 'postcss-selector-parser';
 
 // import { Switch } from 'react-native-paper';
 
-const user = {
-    name: 'testName',
-    email: 'testEmail',
-    description: 'testDescription',
-    searchHistory: 
-      [{id: 1, name: '1'},{id: 2, name:'2'},{id: 3, name:'3'}],
-    favorites: 
-      [{id: 1, name: '1'},{id: 2, name:'2'},{id: 3, name:'3'}]
-  }
+const user = [{
+    user_id: 0,
+    name: 'Greg',
+    email: 'greg@stempedia.org',
+    description: 'User Number One!!',
+  },
+  {
+    user_id: 1,
+    name: 'Mike',
+    email: 'mike@stempedia.org',
+    description: 'User Number Two!!',
+  }]
 
 const posts = [
   {
-    name: 'post0',
+    title: 'Pythagoreans Thereom',
     id: 0,
-    date: '',
-    description: 'aslkeja asd ifjaodsifaf naoweifaoilkshdh oaishgohasdgn oahsego;hagrha;oisfhg aosihgiauhrgihsg',
-    user_id: '0',
-    tags: [],
+    date: 'Dec 4, 2019',
+    description: 'How do you use Pythagorean Theorem?',
+    body: "To use pythagoreans theoreom, one must understand that it can only be used for right triangles, triangles containing a 90 degree angle. The formula is a^2+b^2=c^2 where c is the hypotenuse  (the side opposite the 90 degree angle).",
+    user_id: 0,
+    userName: 'Greg',
+    tags: ['math', 'geometry', 'pythagorean', 'triangles'],
     upVotes: 3,
-    downVotes: -1,
-    rating: 2,
   },
   {
-    name: 'post1',
+    title: 'How to create a form in HTML',
     id: 1,
-    date: '',
-    description: 'post1desc',
-    user_id: '1',
-    tags: [],
-    upVotes: 1,
-    downVotes: -4,
-    rating: -3,
-  }
+    date: 'Dec 3, 2019',
+    description: 'Using form Tags',
+    body: "use <form></form> around the body of your form. other tags can include <input>/<input>, <label></label> ...",
+    user_id: 1,
+    userName: 'Mike',
+    tags: ['HTML'],
+    upVotes: 6,
+  },
 ]
       
 
 class App extends Component {
   state = {
     user: user,
+    posts: posts,
     query: '',
-    searchResults: [],
+    searchLoading: false,
+    searchResults: posts,
     resultsLoaded: false,
+    searchResult: {},
   }
 
   handleOnChange = (event) => {
     this.setState({
         query: (event.target.value)
     })
-    console.log(this.state.query)
+};
+
+  handleonclick = (event) => {
+    // this.setState({
+    //   searchLoading: true,
+    // })
+    console.log('button clicked')
   };
+
+  
+
+//   handleSearch = async (event) => {
+//     this.setState({
+//         searchLoading: true,
+//         searchResults: [],
+//         resultsLoaded: false,
+//     })
+//     let searchResults = await plantService.search(this.state.query).then(res => JSON.parse(res));
+    
+//     this.setState({ 
+//         searchResults: searchResults,
+//         searchLoading: false,
+//         resultsLoaded: true,
+//         priorQuery: this.state.query
+//     })
+// };
 
   
   render() {
@@ -73,7 +104,9 @@ class App extends Component {
           <div className="NavBar">
             < NavBar 
               {...this.state}
+              handleOnClick={this.handleOnClick}
               handleOnChange={this.handleOnChange}
+              posts={posts}
             />
           </div>
           <div className='Main'>
@@ -89,6 +122,12 @@ class App extends Component {
                 {...this.state}
                 />
               }/>
+
+              <Route exact path='/post' render={() =>
+                < Post
+                  {...this.state}
+                />
+            }/>
 
               <Route exact path='/newuser' render={() =>
                 < UserForm

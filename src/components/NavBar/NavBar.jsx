@@ -32,7 +32,7 @@ const NavBar = (props) => {
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item href="/newpost">New Post</Dropdown.Item>
-            <Dropdown.Item href="https://www.google.com">All Posts</Dropdown.Item>
+            <Dropdown.Item href="/">Home</Dropdown.Item>
             <Dropdown.Item href="https://www.google.com">My Posts</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
@@ -40,7 +40,25 @@ const NavBar = (props) => {
         <div className={style.SearchBar}>
             < SearchBar 
               {...props}
+              posts={props.posts}
             />
+        </div>
+        <div>
+          <a href='/login' 
+            className={style.NavBarLink}
+            >
+              LOG IN
+            </a>
+
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+
+          <a href='/signup' 
+            handleClick={() => 
+                console.log('click')}
+            className={style.NavBarLink}
+            >
+              SIGN UP
+          </a>
         </div>
       </div>
     );

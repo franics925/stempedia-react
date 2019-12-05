@@ -6,10 +6,13 @@ const User = (props) => {
 
     return (
         <div className={style.User}>
-            <h3>{props.user.name}</h3>
-            <h5>{props.user.description}</h5><br/>
-            <h5>Search History: {props.user.searchHistory[0].name}</h5>
-            <h5>Favorites: </h5> <p>{props.user.favorites[1].name}</p>
+            <h3>{props.user[0].name}</h3>
+            <p>{props.user[1].description}</p><ln/>
+            <h5>Search History: </h5>
+            <h5>Your Posts: </h5> 
+            <button className={style.NewPostButton}>
+                <a href="/newpost" className={style.NewPostLink}>New Post</a>
+            </button>
             {/* <h5>Post0 desc: </h5><p>{props.posts[0].description}</p> */}
             {/* <h1>{props.user.map((user, idx) =>
                 <div>{this.user.name}</div>
