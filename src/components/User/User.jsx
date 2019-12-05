@@ -7,9 +7,12 @@ const User = (props) => {
     return (
         <div className={style.User}>
             <h3>{props.user[0].name}</h3>
-            <p>{props.user[1].description}</p><ln/>
-            <h5>Search History: </h5>
-            <h5>Your Posts: </h5> 
+            <p>{props.user[0].description}</p><ln/>
+            <div className={style.UserLists}>
+                <h7>Search History: </h7>
+                <h7>Your Posts: </h7> 
+                <h7>Your Favorites: </h7> 
+            </div>
             <button className={style.NewPostButton}>
                 <a href="/newpost" className={style.NewPostLink}>New Post</a>
             </button>

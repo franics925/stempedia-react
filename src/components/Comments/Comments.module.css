@@ -1,0 +1,11 @@
+.Comments {
+    border: .01em solid black;
+}
+
+.Comment {
+    display: flex;
+}
+
+.Votes {
+    display: flex;
+}

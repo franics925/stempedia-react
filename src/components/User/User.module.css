@@ -1,5 +1,10 @@
 .User h5, h3{
-    
     margin: 0px;
     padding: 0px;
+}
+
+.UserLists {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
 }

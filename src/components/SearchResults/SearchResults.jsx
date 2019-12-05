@@ -17,7 +17,7 @@ const SearchResults = (props) => {
                 <div className={style.Result} key={idx}>
                     <p>Up Votes: {result.upVotes}</p>
                     <p>Posted By: {result.userName}</p>
-                    <a href='/result/<id>'>
+                    <a href='/post'>
                         <h3>{result.title}</h3>
                     </a>
                     <p>Description: {result.description}</p>
